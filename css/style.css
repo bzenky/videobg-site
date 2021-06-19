@@ -7,6 +7,12 @@
   font-family: 'Viaoda Libre', cursive;
 }
 
+.homepage {
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+}
+
 header {
   position: absolute;
   width: 100%;
@@ -14,7 +20,7 @@ header {
   padding: 30px 45px;
   align-items: center;
   justify-content: space-between;
-  z-index: 20;
+  z-index: 25;
 }
 
 .logo h1 {
@@ -22,6 +28,27 @@ header {
   letter-spacing: 1px;
   font-size: 30px;
   text-shadow: 0 0 5px gray;
+  cursor: default;
+}
+
+.links.active {
+  display: block;
+}
+
+.links.active ul {
+  display: block;
+  position: absolute;
+  top: 85px;
+  right: 45px;
+  text-align: end;
+}
+
+.links.active li {
+  margin-top: 10px;
+}
+
+.links.active a {
+  font-size: 24px;
 }
 
 .links ul {
@@ -42,6 +69,22 @@ header {
 .links ul a:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   color: #000;
+} 
+
+.mobileMenu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/hb-menu.png);
+  background-size: cover;
+  background-position: center center;
+  z-index: 500;
+  cursor: pointer;
+  transition: .8s;
+}
+
+.mobileMenu.active {
+  background-image: url(../img/x.png);
 }
 
 .text {
@@ -53,6 +96,7 @@ header {
 }
 
 .text h2 {
+  cursor: default;
   font-size: 26px;
   text-shadow: 0 0 5px gray;
 }
@@ -61,19 +105,20 @@ header {
   display: block;
   font-size: 20px;
   text-shadow: 0 0 5px gray;
+  cursor: default;
 }
 
 .text a {
   position: absolute;
+  padding: 15px 35px;
+  margin-top: 15px;
+  border: 2px solid rgba(255, 255, 255, 0);
   text-decoration: none;
+  font-size: 18px;
   color: black;
   text-shadow: 0 0 5px dark-gray;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 15px 35px;
-  margin-top: 15px;
   transition: .5s;
-  border: 2px solid rgba(255, 255, 255, 0);
-  font-size: 18px;
 }
 
 .text a:hover {
@@ -102,7 +147,7 @@ header {
 }
 
 .social-links img {
-  width: 40px;
+  width: 50px;
   filter: opacity(.8);
   margin-bottom: 50px;
 }
@@ -114,4 +159,32 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+  .links {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .text {
+    padding: 0 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text span {
+    display: none;
+  }
+
+  .text a {
+    position: relative;
+  }
 }
