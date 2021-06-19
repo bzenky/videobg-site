@@ -35,6 +35,13 @@ header {
   color: white;
   font-size: 30px;
   text-shadow: 0 0 5px gray;
+  border-bottom: 1px solid rgba(0,0,0,0);
+  transition: .8s;
+}
+
+.links ul a:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: #000;
 }
 
 .text {
@@ -60,7 +67,7 @@ header {
   position: absolute;
   text-decoration: none;
   color: black;
-  text-shadow: 0 0 5px gray;
+  text-shadow: 0 0 5px dark-gray;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 15px 35px;
   margin-top: 15px;
